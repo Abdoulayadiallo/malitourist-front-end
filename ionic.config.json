@@ -1,0 +1,7 @@
+{
+  "name": "apiregion-front-end",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}

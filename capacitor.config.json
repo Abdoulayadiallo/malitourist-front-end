@@ -1,0 +1,6 @@
+{
+	"appId": "io.ionic.starter",
+	"appName": "apiregion-front-end",
+	"webDir": "www",
+	"bundledWebRuntime": false
+}
