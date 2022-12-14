@@ -1,0 +1,127 @@
+ion-card-header {
+    width: 80%;
+  }
+.row {
+    display: flex;
+  }
+  
+  .column {
+    flex: 50%;
+        
+  }
+  .texte{
+    font-size: 2rem;
+    color: #000;
+  }
+.image{
+    width: 70%;
+}  
+
+
+
+//Card pour la presentaion du pays
+
+.card > * {
+    width: 55rem;
+    height: 50rem;
+    padding: 1em;
+  }
+  
+  .card > [data-state='relative'] {
+    position: relative;
+    display: flex;
+    flex-direction: column-reverse;
+  }
+  
+  .card > * + * {
+    margin-top: -150px;
+    box-shadow: 0 -1px 10px rgba(0 0 0 / 60%);
+    border-radius: 10px;
+  }
+  
+  .card > :first-child {
+    position: relative;
+    width: 40rem;
+    height: 35rem;
+    background: #fff;
+    // border: 2px solid lightblue;
+    box-shadow: 10px 5px 5px #cacaca;
+    z-index: 3;
+    margin-left: 38rem;
+    top: 8rem;
+    border-radius: 10px;
+
+  }
+
+
+  
+  .card > :nth-child(2) {
+    background: #4059AD;
+    z-index: 1;
+    margin-top: -35rem;
+    margin-left: 10rem;
+  }
+  
+  .card > :last-child {
+    background: url(../../assets/image/tombouctou.jpg) center no-repeat;
+    background-size: cover;
+    // border: 2px solid gold;
+    z-index: 2;
+    margin-left: 3rem;
+    margin-top: -47rem;
+  }
+
+  .card > :first-child .content {
+    font-size: 2rem;
+    margin: 20px 10px auto 10px;
+  }
+  .card > :first-child .title {
+    color: #4059AD;
+    font-size: 2rem;
+    margin: auto 10px auto 10px;
+
+  }
+
+
+  //Bouton voir region
+  button {
+
+    display: inline-block;
+    background-color: #4059AD;
+    border-radius: 10px;
+    border: 4px double #cccccc;
+    color: #eeeeee;
+    text-align: center;
+    font-size: 28px;
+    padding: 20px;
+    width: fit-content;
+    transition: all 0.5s;
+    cursor: pointer;
+    margin: 20px auto;
+  }
+  button span {
+    cursor: pointer;
+    display: inline-block;
+    position: relative;
+    transition: 0.5s;
+  }
+  button span:after {
+    content: "\00bb";
+    position: absolute;
+    opacity: 0;
+    top: 0;
+    right: -20px;
+    transition: 0.5s;
+  }
+  button:hover {
+    background-color: #fff;
+    color: #4059AD;
+    border: 1px solid #4059AD;
+  }
+  button:hover span {
+    padding-right: 25px;
+  }
+  button:hover span:after {
+    opacity: 1;
+    right: 0;
+  }
