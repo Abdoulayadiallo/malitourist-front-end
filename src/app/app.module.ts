@@ -10,7 +10,7 @@ import { HeaderComponent } from "./header/header.component";
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
 @NgModule({
-    declarations: [AppComponent,HeaderComponent],
+    declarations: [AppComponent,HeaderComponent,],
     providers: [{ provide: RouteReuseStrategy, useClass: IonicRouteStrategy }],
     bootstrap: [AppComponent],
     imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule,FontAwesomeModule ]

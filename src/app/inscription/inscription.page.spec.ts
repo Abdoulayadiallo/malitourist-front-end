@@ -1,19 +1,19 @@
 import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 import { IonicModule } from '@ionic/angular';
 
-import { AjoutRegionPage } from './ajout-region.page';
+import { InscriptionPage } from './inscription.page';
 
-describe('AjoutRegionPage', () => {
-  let component: AjoutRegionPage;
-  let fixture: ComponentFixture<AjoutRegionPage>;
+describe('InscriptionPage', () => {
+  let component: InscriptionPage;
+  let fixture: ComponentFixture<InscriptionPage>;
 
   beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
-      declarations: [ AjoutRegionPage ],
+      declarations: [ InscriptionPage ],
       imports: [IonicModule.forRoot()]
     }).compileComponents();
 
-    fixture = TestBed.createComponent(AjoutRegionPage);
+    fixture = TestBed.createComponent(InscriptionPage);
     component = fixture.componentInstance;
     fixture.detectChanges();
   }));

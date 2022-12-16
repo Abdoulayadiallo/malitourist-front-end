@@ -3,66 +3,93 @@
     <ion-title>Region</ion-title>
   </ion-toolbar>
 </ion-header> -->
-<div class="barnav">
-  <ion-searchbar></ion-searchbar>
 
-  <div class="button" routerLink="/ajout-region">
-    <button>
-      <span>Ajouter region</span>
-    </button>
-  </div>
-</div>
+
 <ion-content>
-  <ion-grid [fixed]="true">
-    <ion-row>
-      <ion-col>
-        <ion-card>
-          <img alt="Silhouette of mountains" src="https://ionicframework.com/docs/img/demos/card-media.png" />
-          <ion-card-header>
-            <ion-card-title>Card Title</ion-card-title>
-            <ion-card-subtitle>Card Subtitle</ion-card-subtitle>
-          </ion-card-header>
-        
-          <ion-card-content>
-            Here's a small text description for the card content. Nothing more, nothing less.
-          </ion-card-content>
-          <ion-button fill="clear">Action 1</ion-button>
-          <ion-button fill="clear">Action 2</ion-button>
-        </ion-card>
-      </ion-col>
-      <ion-col>
-        <ion-card>
-          <img alt="Silhouette of mountains" src="https://ionicframework.com/docs/img/demos/card-media.png" />
-          <ion-card-header>
-            <ion-card-title>Card Title</ion-card-title>
-            <ion-card-subtitle>Card Subtitle</ion-card-subtitle>
-          </ion-card-header>
-        
-          <ion-card-content>
-            Here's a small text description for the card content. Nothing more, nothing less.
-          </ion-card-content>
-          <ion-button fill="clear">Action 1</ion-button>
-          <ion-button fill="clear">Action 2</ion-button>
-        </ion-card>  
-        
-      </ion-col>
-      <ion-col>
-        <ion-card>
-          <img alt="Silhouette of mountains" src="https://ionicframework.com/docs/img/demos/card-media.png" />
-          <ion-card-header>
-            <ion-card-title>Card Title</ion-card-title>
-            <ion-card-subtitle>Card Subtitle</ion-card-subtitle>
-          </ion-card-header>
-        
-          <ion-card-content>
-            Here's a small text description for the card content. Nothing more, nothing less.
-          </ion-card-content>
-          <ion-button fill="clear">Action 1</ion-button>
-          <ion-button fill="clear">Action 2</ion-button>
-        </ion-card>
-        
-      </ion-col>
-    </ion-row>
-  </ion-grid>
+  <div class="barnav">
+    <ion-searchbar></ion-searchbar>
 
+    <div class="button" (click)="openModal()">
+      <button>
+        <span>Ajouter region</span>
+      </button>
+    </div>
+  </div>
+  <div class="container">
+    <ion-grid>
+      <ion-row>
+        <ion-col>
+          <div class="box" id="blue">
+            <ion-card>
+              <img alt="Monument_Al_Quoods_Bamako" src="../../assets/image/bamako Monument_Al_Quoods_-_Bamako.jpg" />
+              <ion-card-header>
+                <ion-card-title>Bamako</ion-card-title>
+                <ion-card-subtitle>1234567890<span>(2022)</span></ion-card-subtitle>
+              </ion-card-header>
+
+              <ion-card-content>
+                Bamako est la capitale et la plus grande ville du Mali. Dotée d'un important port fluvial sur le Niger
+                et centre commercial rayonnant sur toute la sous-région, la ville est aussi le principal centre
+                administratif du pays et compte 2 529 300 habitants en 2020, appelés Bamakois.
+              </ion-card-content>
+              <ion-card class="cbutton">
+                <ion-button fill="clear"><ion-icon name="repeat"></ion-icon></ion-button>
+                <ion-button fill="clear" routerLink="/voir-region"><ion-icon name="eye-outline"></ion-icon></ion-button>
+                <ion-button fill="clear"><ion-icon name="chatbubble-ellipses-outline"></ion-icon></ion-button>
+              </ion-card>
+            </ion-card>
+          </div>
+        </ion-col>
+        <ion-col>
+          <div class="box" id="blue">
+            <ion-card>
+              <img alt="Monument_Al_Quoods_Bamako" src="../../assets/image/bamako Monument_Al_Quoods_-_Bamako.jpg" />
+              <ion-card-header>
+                <ion-card-title>Bamako</ion-card-title>
+                <ion-card-subtitle>1234567890<span>(2022)</span></ion-card-subtitle>
+              </ion-card-header>
+
+              <ion-card-content>
+                Bamako est la capitale et la plus grande ville du Mali. Dotée d'un important port fluvial sur le Niger
+                et centre commercial rayonnant sur toute la sous-région, la ville est aussi le principal centre
+                administratif du pays et compte 2 529 300 habitants en 2020, appelés Bamakois.
+              </ion-card-content>
+              <ion-card class="cbutton">
+                <ion-button fill="clear"><ion-icon name="repeat"></ion-icon></ion-button>
+                <ion-button fill="clear" routerLink="/voir-region"><ion-icon name="eye-outline"></ion-icon></ion-button>
+                <ion-button fill="clear"><ion-icon name="chatbubble-ellipses-outline"></ion-icon></ion-button>
+              </ion-card>
+            </ion-card>
+          </div>
+        </ion-col>
+
+        <ion-col>
+          <div class="box" id="blue">
+            <ion-card>
+              <img alt="Monument_Al_Quoods_Bamako" src="../../assets/image/bamako Monument_Al_Quoods_-_Bamako.jpg" />
+              <ion-card-header>
+                <ion-card-title>Bamako</ion-card-title>
+                <ion-card-subtitle>1234567890<span>(2022)</span></ion-card-subtitle>
+              </ion-card-header>
+
+              <ion-card-content>
+                Bamako est la capitale et la plus grande ville du Mali. Dotée d'un important port fluvial sur le Niger
+                et centre commercial rayonnant sur toute la sous-région, la ville est aussi le principal centre
+                administratif du pays et compte 2 529 300 habitants en 2020, appelés Bamakois.
+              </ion-card-content>
+              <ion-card class="cbutton">
+                <ion-button fill="clear"><ion-icon name="repeat"></ion-icon></ion-button>
+                <ion-button fill="clear" routerLink="/voir-region"><ion-icon name="eye-outline"></ion-icon></ion-button>
+                <ion-button fill="clear"><ion-icon name="chatbubble-ellipses-outline"></ion-icon></ion-button>
+              </ion-card>
+            </ion-card>
+          </div>
+        </ion-col>
+
+      </ion-row>
+    </ion-grid>
+  </div>
 </ion-content>
+
+<ion-footer>
+</ion-footer>

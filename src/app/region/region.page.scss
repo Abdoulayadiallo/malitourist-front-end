@@ -8,9 +8,8 @@
   button {
 
     display: inline-block;
-    background-color: #4059AD;
+    background-color: #4285F4;
     border-radius: 10px;
-    border: 4px double #cccccc;
     color: #eeeeee;
     text-align: center;
     font-size: 28px;
@@ -36,8 +35,8 @@
   }
   button:hover {
     background-color: #fff;
-    color: #4059AD;
-    border: 1px solid #4059AD;
+    color: #4285F4;
+    border: 1px solid #4285F4;
   }
   button:hover span {
     padding-right: 25px;
@@ -47,6 +46,33 @@
     right: 0;
   }
 
+ion-card > img{
+  width: 100%;
+  height: 200px;
+}
 
-
+ //////------------------------------------ 
+#blue {
+  background-color: #4285F4;
+  border-top: 2px solid #4285F4;
+  border-radius: 10px;
+  z-index: 2;
   
+}
+ion-grid{
+  margin-bottom: 10% ;
+}
+ion-card{
+  // border: 2px solid #4285F4;
+  margin: 10px 0 10px 10px;
+}
+.cbutton{
+  display: flex;
+  justify-content: center;
+  margin: 10px calc(20% - 20px);
+  border: 1px solid #4285F4;
+}
+//----------------------------
+ion-col{
+  margin: 10px;
+}

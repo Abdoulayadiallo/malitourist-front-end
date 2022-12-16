@@ -16,8 +16,16 @@ const routes: Routes = [
     loadChildren: () => import('./region/region.module').then( m => m.RegionPageModule)
   },
   {
-    path: 'ajout-region',
-    loadChildren: () => import('./ajout-region/ajout-region.module').then( m => m.AjoutRegionPageModule)
+    path: 'inscription',
+    loadChildren: () => import('./inscription/inscription.module').then( m => m.InscriptionPageModule)
+  },
+  {
+    path: 'voir-region',
+    loadChildren: () => import('./voir-region/voir-region.module').then( m => m.VoirRegionPageModule)
+  },
+  {
+    path: 'connexion',
+    loadChildren: () => import('./connexion/connexion.module').then( m => m.ConnexionPageModule)
   },
 ];
 

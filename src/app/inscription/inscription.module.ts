@@ -4,17 +4,17 @@ import { FormsModule } from '@angular/forms';
 
 import { IonicModule } from '@ionic/angular';
 
-import { AjoutRegionPageRoutingModule } from './ajout-region-routing.module';
+import { InscriptionPageRoutingModule } from './inscription-routing.module';
 
-import { AjoutRegionPage } from './ajout-region.page';
+import { InscriptionPage } from './inscription.page';
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    AjoutRegionPageRoutingModule
+    InscriptionPageRoutingModule
   ],
-  declarations: [AjoutRegionPage]
+  declarations: [InscriptionPage]
 })
-export class AjoutRegionPageModule {}
+export class InscriptionPageModule {}
