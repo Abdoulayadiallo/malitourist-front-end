@@ -8,11 +8,34 @@ import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
 import { HeaderComponent } from "./header/header.component";
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { ResetPasswordComponent } from './reset-password/reset-password.component';
+import { ProfileComponent } from './profile/profile.component';
+import { RegionDetailsComponent } from './region-details/region-details.component';
+import { AccountService } from './service/account.service';
+import { LoadingService } from './service/loading.service';
+import { RegionService } from './service/region.service';
+import { AlertService } from './service/alert.service';
+import { RegionResolverService } from './service/region-resolver.service';
+import { AuthenticationGuard } from './guard/authentication.guard';
+import { HTTP_INTERCEPTORS } from '@angular/common/http';
+import { AuthInterceptor } from './interceptor/auth.interceptor';
+import { CacheInterceptor } from './interceptor/cache.interceptor';
+import { FormsModule } from '@angular/forms';
+import { NgxLoadingModule } from 'ngx-loading';
 
 @NgModule({
-    declarations: [AppComponent,HeaderComponent,],
-    providers: [{ provide: RouteReuseStrategy, useClass: IonicRouteStrategy }],
+    declarations: [AppComponent, HeaderComponent, ResetPasswordComponent, ProfileComponent, RegionDetailsComponent],
+    providers: [AccountService,
+        LoadingService,
+        RegionService,
+        AlertService,
+        RegionResolverService,
+        AuthenticationGuard,
+        { provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true },
+        { provide: HTTP_INTERCEPTORS, useClass: CacheInterceptor, multi: true },
+        { provide: RouteReuseStrategy, useClass: IonicRouteStrategy }],
     bootstrap: [AppComponent],
-    imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule,FontAwesomeModule ]
+    imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule, FontAwesomeModule,FormsModule,NgxLoadingModule.forRoot({})
+    ]
 })
-export class AppModule {}
+export class AppModule { }

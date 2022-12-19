@@ -14,7 +14,7 @@ export class AccountService {
   constant: ConstantSpring = new ConstantSpring();
   public host: string = this.constant.host;
   public token!: string | any;
-  public loggInUsername!: string | null;
+  public loggInUsername!: string;
   public redirectUrl!: string;
   private jwtHelper = new JwtHelperService();
 

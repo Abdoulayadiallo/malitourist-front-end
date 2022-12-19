@@ -6,5 +6,5 @@ export class ConstantSpring {
 
   public userPicture = `${this.host}/image/user`;
 
-  public postPicture = `${this.host}/image/region`;
+  public regionPicture = `${this.host}/image/region`;
 }

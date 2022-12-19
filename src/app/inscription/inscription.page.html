@@ -6,30 +6,38 @@
         <h1>Inscription</h1>
       </div>
       <div class="form-content">
-        <form>
+        <form #registerForm="ngForm" (ngSubmit)="onRegister(registerForm.value)" class="form-signin">
           <div class="form-group">
             <label for="username">Username</label>
             <input type="text" id="username" name="username" required="required" />
           </div>
           <div class="form-group">
             <label for="email">Email</label>
-            <input type="email" id="email" name="email" required="required" />
-          </div>
+            <input type="email" class="form-control" name="email" placeholder="Email" email required ngModel
+            #emailInput="ngModel">
+        <span class="help-block" *ngIf="emailInput.invalid && emailInput.touched"> Entrer une addresse email valide.</span>
+    </div>
           <div class="form-group">
             <label for="username">Nom</label>
-            <input type="text" id="name" name="username" required="required" />
+            <input type="text" class="form-control" name="username" placeholder="Username" required ngModel
+              #usernameInput="ngModel">
+            <span class="help-block" *ngIf="usernameInput.invalid && usernameInput.touched">Entrer un username valide.</span>
           </div>
           <div class="form-group">
-            <label for="name">Prenom</label>
-            <input type="text" id="prenom" name="prenom" required="required" />
-          </div>
+            <label for="nom">Prenom</label>
+            <input type="text" name="nom" placeholder="Nom" required ngModel
+            #nomInput="ngModel">
+          <span class="help-block" *ngIf="nomInput.invalid && nomInput.touched">Entrer un nom valide.</span>
+        </div>
           <div class="form-group">
             <label for="password">Password</label>
-            <input type="password" id="password" name="password" required="required" />
-          </div>
+            <input type="password" id="password" name="password" placeholder="Mots de passe" required ngModel
+            #passwordInput="ngModel">
+          <span class="help-block" *ngIf="passwordInput.invalid && passwordInput.touched">Entrer mots de passe valide.</span>
+        </div>
 
           <div class="form-group">
-            <button type="submit">Log In</button>
+            <button type="submit" [disabled]="registerForm.invalid">Log In</button>
           </div>
           <div class="form-group">
             <label class="form-remember">
