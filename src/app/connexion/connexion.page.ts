@@ -27,10 +27,10 @@ export class ConnexionPage implements OnInit, OnDestroy {
       if (this.accountService.redirectUrl) {
         this.router.navigateByUrl(this.accountService.redirectUrl);
       } else {
-        this.router.navigateByUrl('/home');
+        this.router.navigateByUrl('/accueil');
       }
     } else {
-      this.router.navigateByUrl('/login');
+      this.router.navigateByUrl('/connexion');
     }
   }
 
@@ -45,7 +45,7 @@ export class ConnexionPage implements OnInit, OnDestroy {
           if (this.accountService.redirectUrl) {
             this.router.navigateByUrl(this.accountService.redirectUrl);
           } else {
-            this.router.navigateByUrl('/home');
+            this.router.navigateByUrl('/accueil');
           }
           this.loadingService.isLoading.next(false);
         },
@@ -53,7 +53,7 @@ export class ConnexionPage implements OnInit, OnDestroy {
           console.log(error);
           this.loadingService.isLoading.next(false);
           this.alertService.showAlert(
-            'Username or password incorrect. Please try again.',
+            'Username ou mots de passe incorrect. Essayer encore.',
             AlertType.DANGER
           );
         }

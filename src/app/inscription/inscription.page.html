@@ -8,42 +8,45 @@
       <div class="form-content">
         <form #registerForm="ngForm" (ngSubmit)="onRegister(registerForm.value)" class="form-signin">
           <div class="form-group">
+            <label for="nom">Nom</label>
+            <input type="text" class="form-control" name="nom" placeholder="nom" required ngModel #nomInput="ngModel">
+            <span class="help-block" *ngIf="nomInput.invalid && nomInput.touched">Entrer un nom valide.</span>
+          </div>
+          <div class="form-group">
+            <label for="prenom">Prenom</label>
+            <input type="text" name="prenom" placeholder="Prenom" required ngModel #prenomInput="ngModel">
+            <span class="help-block" *ngIf="prenomInput.invalid && prenomInput.touched">Entrer un prenom valide.</span>
+          </div>
+          <div class="form-group">
             <label for="username">Username</label>
-            <input type="text" id="username" name="username" required="required" />
+            <input type="text" class="form-control" name="username" placeholder="Username" required ngModel
+              #usernameInput="ngModel">
+            <span class="help-block" *ngIf="usernameInput.invalid && usernameInput.touched">Entrer un username
+              valide.</span>
           </div>
           <div class="form-group">
             <label for="email">Email</label>
             <input type="email" class="form-control" name="email" placeholder="Email" email required ngModel
-            #emailInput="ngModel">
-        <span class="help-block" *ngIf="emailInput.invalid && emailInput.touched"> Entrer une addresse email valide.</span>
-    </div>
-          <div class="form-group">
-            <label for="username">Nom</label>
-            <input type="text" class="form-control" name="username" placeholder="Username" required ngModel
-              #usernameInput="ngModel">
-            <span class="help-block" *ngIf="usernameInput.invalid && usernameInput.touched">Entrer un username valide.</span>
+              #emailInput="ngModel">
+            <span class="help-block" *ngIf="emailInput.invalid && emailInput.touched"> Entrer une addresse email
+              valide.</span>
           </div>
-          <div class="form-group">
-            <label for="nom">Prenom</label>
-            <input type="text" name="nom" placeholder="Nom" required ngModel
-            #nomInput="ngModel">
-          <span class="help-block" *ngIf="nomInput.invalid && nomInput.touched">Entrer un nom valide.</span>
-        </div>
-          <div class="form-group">
+          
+          <!-- <div class="form-group">
             <label for="password">Password</label>
             <input type="password" id="password" name="password" placeholder="Mots de passe" required ngModel
             #passwordInput="ngModel">
           <span class="help-block" *ngIf="passwordInput.invalid && passwordInput.touched">Entrer mots de passe valide.</span>
-        </div>
+        </div> -->
 
           <div class="form-group">
-            <button type="submit" [disabled]="registerForm.invalid">Log In</button>
+            <button [disabled]="registerForm.invalid" type="submit">Inscription</button>
           </div>
-          <div class="form-group">
+          <!-- <div class="form-group">
             <label class="form-remember">
               Vous avez un compte
             </label><a class="form-recovery" routerLink="/connexion">connectez-vous</a>
-          </div>
+          </div> -->
         </form>
       </div>
     </div>

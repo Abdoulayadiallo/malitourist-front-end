@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { RouteReuseStrategy } from '@angular/router';
+import { RouteReuseStrategy, RouterModule } from '@angular/router';
 
 import { IonicModule, IonicRouteStrategy } from '@ionic/angular';
 
@@ -17,11 +17,12 @@ import { RegionService } from './service/region.service';
 import { AlertService } from './service/alert.service';
 import { RegionResolverService } from './service/region-resolver.service';
 import { AuthenticationGuard } from './guard/authentication.guard';
-import { HTTP_INTERCEPTORS } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { AuthInterceptor } from './interceptor/auth.interceptor';
 import { CacheInterceptor } from './interceptor/cache.interceptor';
 import { FormsModule } from '@angular/forms';
 import { NgxLoadingModule } from 'ngx-loading';
+import { CommonModule } from '@angular/common';
 
 @NgModule({
     declarations: [AppComponent, HeaderComponent, ResetPasswordComponent, ProfileComponent, RegionDetailsComponent],
@@ -35,7 +36,14 @@ import { NgxLoadingModule } from 'ngx-loading';
         { provide: HTTP_INTERCEPTORS, useClass: CacheInterceptor, multi: true },
         { provide: RouteReuseStrategy, useClass: IonicRouteStrategy }],
     bootstrap: [AppComponent],
-    imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule, FontAwesomeModule,FormsModule,NgxLoadingModule.forRoot({})
+    imports: [ BrowserModule,
+        CommonModule,
+        HttpClientModule,
+        FormsModule,
+        NgxLoadingModule.forRoot({}),
+        IonicModule.forRoot(), 
+        AppRoutingModule,
+        FontAwesomeModule
     ]
 })
 export class AppModule { }

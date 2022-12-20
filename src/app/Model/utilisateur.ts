@@ -6,4 +6,5 @@ export class Utilisateur {
     email!: string;
     password!: string;
     bio!: string;
+    createdDate!: string;
 }
