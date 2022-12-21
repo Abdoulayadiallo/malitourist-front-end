@@ -1,30 +1,45 @@
-<div class="login-box">
-  <h2>Ajouter Region</h2>
-  <form>
-    <div class="user-box">
-      <input type="text" name="" required="">
-      <label>Nom</label>
-    </div>
-    <div class="user-box">
-      <input type="text" name="" required="">
-      <label>CodeRegion</label>
-    </div>
-    <div class="user-box">
-      <input type="text" name="" required="">
-      <label>Superficie</label>
-    </div>
-    <div class="user-box">
-      <input type="text" name="" required="">
-      <label>Pays</label>
-    </div>
-    <div class="user-box">
-      <input type="text" name="" required="">
-      <label>Langue</label>
-    </div>
-    <div class="user-box">
-      <input type="text" name="" required="">
-      <label>Activité</label>
-    </div>
-    <a href="#">Submit</a>
-  </form>
+<div class="container">
+  <div class="login-box">
+    <h2>Ajouter Region</h2>
+    <form>
+      <div class="user-box col x-50" name="image" >
+          <input type="file" 
+          id="file1" 
+          name="image"  [(ngModel)]="image" (click)="UploadImage($event)">
+      </div>
+      <div class="user-box col x-50">
+        <input type="text" name="nomregion" [(ngModel)]="nomregion">
+        <label>Nom</label>
+      </div>
+      <div class="user-box col  x-50">
+        <input type="text" name="coderegion" [(ngModel)]="coderegion" required="">
+        <label>CodeRegion</label>
+      </div>
+      <div class="user-box col x-50">
+        <input type="text" name="superficie" [(ngModel)]="superficie" required="">
+        <label>Superficie</label>
+      </div>
+      <div class="user-box col x-50">
+        <input type="text" name="pays" [(ngModel)]="pays" required="">
+        <label>Pays</label>
+      </div>
+      <div class="user-box col x-50">
+        <input type="text" name="populations" [(ngModel)]="populations" required="">
+        <label>Population</label>
+      </div>
+      <div class="user-box col x-50">
+        <input type="text" name="langue" [(ngModel)]="langue" required="">
+        <label>Langue</label>
+      </div>
+      <div class="user-box col x-50">
+        <input type="text" name="activite" [(ngModel)]="activite" required="">
+        <label>Activité</label>
+      </div>
+      <div class="user-box col x-100">
+        <input type="text" name="description" [(ngModel)]="description" required="">
+        <label>Description</label>
+      </div>
+      <a (click)="AjouterRegion()">Envoyer</a>
+    </form>
+  </div>
 </div>

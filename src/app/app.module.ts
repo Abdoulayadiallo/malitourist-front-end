@@ -20,28 +20,33 @@ import { AuthenticationGuard } from './guard/authentication.guard';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { AuthInterceptor } from './interceptor/auth.interceptor';
 import { CacheInterceptor } from './interceptor/cache.interceptor';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { NgxLoadingModule } from 'ngx-loading';
 import { CommonModule } from '@angular/common';
+import { AjoutRegionComponent } from './ajout-region/ajout-region.component';
+import { PaysService } from './service/pays.service';
 
 @NgModule({
-    declarations: [AppComponent, HeaderComponent, ResetPasswordComponent, ProfileComponent, RegionDetailsComponent],
+    declarations: [AppComponent, HeaderComponent, ResetPasswordComponent, ProfileComponent, RegionDetailsComponent, AjoutRegionComponent],
     providers: [AccountService,
         LoadingService,
         RegionService,
         AlertService,
         RegionResolverService,
+        PaysService,
         AuthenticationGuard,
         { provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true },
         { provide: HTTP_INTERCEPTORS, useClass: CacheInterceptor, multi: true },
         { provide: RouteReuseStrategy, useClass: IonicRouteStrategy }],
     bootstrap: [AppComponent],
-    imports: [ BrowserModule,
+    imports: [BrowserModule,
+        ReactiveFormsModule,
         CommonModule,
         HttpClientModule,
         FormsModule,
+        BrowserModule,
         NgxLoadingModule.forRoot({}),
-        IonicModule.forRoot(), 
+        IonicModule.forRoot(),
         AppRoutingModule,
         FontAwesomeModule
     ]

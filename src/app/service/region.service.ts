@@ -21,12 +21,36 @@ export class RegionService {
   save(region: Region): Observable<Region> {
     return this.http.post<Region>(`${this.host}/region/add`, region);
   }
+  
+ AddRegion(image: any,
+    nomregion: String, coderegion: String, activite: string, langue: string, date: any, description: string, superficie: string, populations: any,pays:any): Observable<any> {
+
+    const data1: FormData = new FormData();
+
+    const data = [{
+      image: image,
+      nomregion: nomregion,
+      coderegion: coderegion,
+      activité: activite,
+      langue: langue,
+      date: date,
+      description: description,
+      superficie: superficie,
+      populations: populations,
+      pays:pays
+    }]
+    console.log(data)
+    data1.append('data', JSON.stringify(data).slice(1, JSON.stringify(data).lastIndexOf(']')));
+    data1.append('image', image);
+    return this.http.post<Region>(`${this.host}/region/add`, data1);
+  }
+
 
   getOneRegionById(regionId: number): Observable<Region> {
     return this.http.get<Region>(`${this.host}/region/getRegionById/${regionId}`);
   }
   getAllRegion(): Observable<Region[]> {
-    return this.http.get<Region[]>(`${this.host}/region/mylist}`);
+    return this.http.get<Region[]>(`${"http://localhost:8080/region/mylist"}`);
   }
 
 

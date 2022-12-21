@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { Pays } from '../Model/pays';
+import { PaysService } from '../service/pays.service';
+
 
 @Component({
   selector: 'app-accueil',
@@ -6,10 +9,17 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./accueil.page.scss'],
 })
 export class AccueilPage implements OnInit {
+  payss!: Pays[];
 
-  constructor() { }
+
+  constructor(private paysService:PaysService) { }
 
   ngOnInit() {
+    this.AfficherPaysInfo();
   }
-
+  AfficherPaysInfo(){
+    this.paysService.getAllPays().subscribe(data => {
+      this.payss = data;
+    });
+  }
 }

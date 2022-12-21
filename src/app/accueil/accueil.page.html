@@ -1,5 +1,5 @@
 
-<ion-content>
+<ion-content *ngFor="let pays of payss">
 
   <ion-card>
     <ion-grid [fixed]="true" >
@@ -44,7 +44,7 @@
             <ion-card-title>Superficie</ion-card-title>
         </ion-row>
         <ion-row class="ion-justify-content-center">
-            <ion-card-title>1 241 238 km²</ion-card-title>
+            <ion-card-title>{{pays.superficie}}</ion-card-title>
         </ion-row>
       </ion-grid>
       </ion-card>
@@ -71,10 +71,10 @@
   </ion-row>
 </ion-grid>
 
-<div class="card">
-  <div class="card-box">
-    <H1 class="title">Mali</H1>
-    <div class="content">Ancienne colonie française du Soudan français, le Mali est devenu indépendant le 22 septembre 1960, après l'éclatement de la fédération du Mali regroupant le Sénégal et la République soudanaise. Sa devise est « un peuple, un but, une foi » et son drapeau est constitué de trois bandes verticales verte, jaune et rouge.</div>
+<div class="card" >
+  <div class="card-box" >
+    <H1 class="title">{{pays.nom_pays}}</H1>
+    <div class="content">{{pays.description}}</div>
     <div class="button">
       <button>
         <span>Voir les regions du Mali</span>

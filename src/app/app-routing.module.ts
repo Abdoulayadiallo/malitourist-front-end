@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
+import { AjoutRegionComponent } from './ajout-region/ajout-region.component';
 import { AuthenticationGuard } from './guard/authentication.guard';
 import { ProfileComponent } from './profile/profile.component';
 import { RegionDetailsComponent } from './region-details/region-details.component';
@@ -34,6 +35,7 @@ const routes: Routes = [
   { path: 'resetpassword', component: ResetPasswordComponent },
   { path: 'region/:regionId', component: RegionDetailsComponent},
   { path: 'profile/:username', component: ProfileComponent, canActivate: [AuthenticationGuard] },
+  { path: 'ajout-region', component: AjoutRegionComponent, },
 
 
 ];
