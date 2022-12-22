@@ -1,5 +1,5 @@
 export class Pays {
-    id_pays!: string;
+    id_pays!: number;
     nom_pays!: string;
     description!: string;
     superficie!: string;

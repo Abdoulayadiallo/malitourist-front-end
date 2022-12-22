@@ -25,9 +25,11 @@ import { NgxLoadingModule } from 'ngx-loading';
 import { CommonModule } from '@angular/common';
 import { AjoutRegionComponent } from './ajout-region/ajout-region.component';
 import { PaysService } from './service/pays.service';
+import { PaysModalComponent } from './pays-modal/pays-modal.component';
+import { PaysModifModalComponent } from './pays-modif-modal/pays-modif-modal.component';
 
 @NgModule({
-    declarations: [AppComponent, HeaderComponent, ResetPasswordComponent, ProfileComponent, RegionDetailsComponent, AjoutRegionComponent],
+    declarations: [AppComponent, HeaderComponent, ResetPasswordComponent, ProfileComponent, RegionDetailsComponent, AjoutRegionComponent,PaysModalComponent,PaysModifModalComponent],
     providers: [AccountService,
         LoadingService,
         RegionService,

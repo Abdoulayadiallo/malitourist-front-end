@@ -1,0 +1,15 @@
+<form (ngSubmit) = "AjouterPays()">
+  <h1>Ajouter Pays</h1>
+  <div class="formcontainer">
+    <hr />
+    <div class="container">
+      <label for="uname"><strong>Pays</strong></label>
+      <input type="text" placeholder="Entrer pays" name="pays"  [(ngModel)]="pays.nom_pays"required>
+      <label for="superficie"><strong>Superficie</strong></label>
+      <input type="text" placeholder="Entrer superficie" name="superficie" [(ngModel)]="pays.superficie" required>
+      <label for="description"><strong>Description</strong></label>
+      <textarea name="description" [(ngModel)]="pays.description" placeholder="Entrer la description" id="" rows="4"></textarea>
+    </div>
+    <button type="submit">Valider</button>
+  </div>
+</form>

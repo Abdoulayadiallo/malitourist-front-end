@@ -14,8 +14,18 @@ export class PaysService {
 
   constructor(private http:HttpClient) { }
   
+  addPays(pays: Pays): Observable<Pays> {
+    return this.http.post<Pays>(`${this.host}/pays/add`, pays);
+  }
+ DelPays(id: number): Observable<Object> {
+    return this.http.delete(`${this.host}/pays/delete/${id}`);
+  }
+ 
   getAllPays(): Observable<Pays[]> {
     return this.http.get<Pays[]>("http://localhost:8080/pays/mylist");
+  }
+  updatePays(id: number, pays: Pays): Observable<Object>{
+    return this.http.put(`${this.host}/pays/update/${id}`, pays);
   }
 
 }

@@ -1,11 +1,9 @@
 <div class="container">
   <div class="login-box">
     <h2>Ajouter Region</h2>
-    <form>
-      <div class="user-box col x-50" name="image" >
-          <input type="file" 
-          id="file1" 
-          name="image"  [(ngModel)]="image" (click)="UploadImage($event)">
+    <form (ngSubmit)="AjouterRegion()">
+      <div class="user-box col x-50" name="image">
+        <input type="file" id="file1" name="image" [(ngModel)]="image" (change)="UploadImage($event)">
       </div>
       <div class="user-box col x-50">
         <input type="text" name="nomregion" [(ngModel)]="nomregion">
@@ -20,11 +18,16 @@
         <label>Superficie</label>
       </div>
       <div class="user-box col x-50">
-        <input type="text" name="pays" [(ngModel)]="pays" required="">
-        <label>Pays</label>
+        <!-- <input type="text" name="pays" [(ngModel)]="pays.id_pays" required=""> -->
+        <select name="pays" >
+          <option value="first" *ngFor="let pays of payss" [(ngModel)]="paysSel">{{pays.nom_pays}}</option>
+        </select>
       </div>
       <div class="user-box col x-50">
-        <input type="text" name="populations" [(ngModel)]="populations" required="">
+        <!-- <input type="text" name="populations" required=""> -->
+        <select name="populations">
+          <option value="first" *ngFor="let populations of populationss" [(ngModel)]="paysSel">{{populations.chiffre}}</option>
+        </select>
         <label>Population</label>
       </div>
       <div class="user-box col x-50">
@@ -39,7 +42,7 @@
         <input type="text" name="description" [(ngModel)]="description" required="">
         <label>Description</label>
       </div>
-      <a (click)="AjouterRegion()">Envoyer</a>
+      <button><a type="submit">Envoyer</a></button>
     </form>
   </div>
 </div>

@@ -1,0 +1,32 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title><ion-button (click)="openModal()">Ajouter pays</ion-button>
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <h1>Les Pays</h1>
+
+  <table id="customers">
+    <tr>
+      <th>N°</th>
+      <th>Nom Pays</th>
+      <th>Superfie</th>
+      <th>Description</th>
+      <th>Action</th>
+    </tr>
+    <tr *ngFor="let pays of payss">
+      <td>{{pays.id_pays}}</td>
+      <td>{{pays.nom_pays}}</td>
+      <td>{{pays.superficie}}</td>
+      <td>{{pays.description}}</td>
+      <td>
+        <ion-button (click)= "SupprimerPays(pays.id_pays)"><ion-icon name="trash-outline"></ion-icon></ion-button>
+        <ion-button (click)= "openModalModif(pays.id_pays)"><ion-icon name="refresh-outline"></ion-icon></ion-button>
+      </td>
+    </tr>
+
+  </table>
+
+</ion-content>

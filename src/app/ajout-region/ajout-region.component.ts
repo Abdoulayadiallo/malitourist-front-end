@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { Pays } from '../Model/pays';
+import { Population } from '../Model/population';
+import { PaysService } from '../service/pays.service';
 import { RegionService } from '../service/region.service';
 
 @Component({
@@ -17,11 +20,14 @@ export class AjoutRegionComponent implements OnInit {
   superficie!: string;
   commentaires!: any;
   populations!: any;
-  pays!: any;
-  constructor(private regionService:RegionService) { }
+  paysSel!: any;
+  region: any;
+  payss!: Pays[];
+  populationss!: Population[];
+  constructor(private regionService:RegionService, private paysService:PaysService) { }
 
   ngOnInit() {
-    this.AjouterRegion();
+    this.AfficherPays();
   }
   UploadImage(event: any){
     this.image = event.target["files"][0]
@@ -29,8 +35,23 @@ export class AjoutRegionComponent implements OnInit {
   }
 
   AjouterRegion(){
-    this.regionService.AddRegion(this.image,this.nomregion,this.coderegion,this.activite,this.langue,this.date,this.description,this.superficie,this.populations,this.pays).subscribe(data=>{
+    this.regionService.AddRegion(this.image,this.nomregion,this.coderegion,this.activite,this.langue,this.date,this.description,this.superficie,this.populations,this.paysSel).subscribe(data=>{
+        this.region = data;
           console.log(data)
        });
+  }
+  AfficherPays(){
+    this.regionService.getAllPopulation().subscribe(data => {
+      this.populationss = data
+      console.log(data);
+    },
+    error => console.log(error));
+  }
+  AfficherPopulation(){
+    this.paysService.getAllPays().subscribe(data => {
+      this.payss = data
+      console.log(data);
+    },
+    error => console.log(error));
   }
 }

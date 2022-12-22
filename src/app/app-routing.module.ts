@@ -35,7 +35,11 @@ const routes: Routes = [
   { path: 'resetpassword', component: ResetPasswordComponent },
   { path: 'region/:regionId', component: RegionDetailsComponent},
   { path: 'profile/:username', component: ProfileComponent, canActivate: [AuthenticationGuard] },
-  { path: 'ajout-region', component: AjoutRegionComponent, },
+  { path: 'ajout-region', component: AjoutRegionComponent, },  {
+    path: 'pays',
+    loadChildren: () => import('./pays/pays.module').then( m => m.PaysPageModule)
+  },
+
 
 
 ];
